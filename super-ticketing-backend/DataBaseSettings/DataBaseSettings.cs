@@ -1,0 +1,9 @@
+﻿namespace super_ticketing_backend.DataBaseSettings;
+
+public class DataBaseSettings
+{
+    public string ConnectionString { get; set; } = null!;
+
+    public string DatabaseName { get; set; } = null!;
+    
+}
