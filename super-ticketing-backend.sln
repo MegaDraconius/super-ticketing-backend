@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "super-ticketing-backend", "super-ticketing-backend\super-ticketing-backend.csproj", "{2AEFB6AF-765B-4877-90AD-277FDDE0E25F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{2AEFB6AF-765B-4877-90AD-277FDDE0E25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AEFB6AF-765B-4877-90AD-277FDDE0E25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AEFB6AF-765B-4877-90AD-277FDDE0E25F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
