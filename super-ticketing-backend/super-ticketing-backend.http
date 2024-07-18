@@ -1,0 +1,6 @@
+@super_ticketing_backend_HostAddress = http://localhost:5275
+
+GET {{super_ticketing_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
