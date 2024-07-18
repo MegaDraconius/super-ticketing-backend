@@ -1,4 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CUsuario_005CRiderProjects_005Csuper_002Dticketing_002Dbackend_005Csuper_002Dticketing_002Dbackend_005CServices_005CMongoAtlasService_002Ecs/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bf4af368_002Ddab9_002D44e6_002D81fc_002D223c15683f3c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UnitTest1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.UnitTest1&lt;/TestId&gt;&#xD;
