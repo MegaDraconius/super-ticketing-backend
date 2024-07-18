@@ -14,10 +14,16 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<UserService>();
+builder.Services.AddSingleton<ITGuyService>();
 builder.Services.AddSingleton<IUserRepository, UserRepository>(provider =>
 {
     var userService = provider.GetRequiredService<UserService>();
     return new UserRepository(userService.GetUsersCollection());
+});
+builder.Services.AddSingleton<IITGuyRepository, ITGuyRepository>(provider =>
+{
+    var itGuyService = provider.GetRequiredService<ITGuyService>();
+    return new ITGuyRepository(itGuyService.GetItGuysCollection());
 });
 builder.Services.Configure<DataBaseSettings>(
     builder.Configuration.GetSection("super-ticketing-backend"));
