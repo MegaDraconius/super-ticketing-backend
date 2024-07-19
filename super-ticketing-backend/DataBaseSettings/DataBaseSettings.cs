@@ -12,4 +12,6 @@ public class DataBaseSettings
 
     public string CountryCollectionName { get; set; } = null!;
 
+    public string TicketsCollectionName { get; set; } = null!;
+
 }
