@@ -10,4 +10,6 @@ public class DataBaseSettings
 
     public string ITGuysCollectionName { get; set; } = null!;
 
+    public string CountryCollectionName { get; set; } = null!;
+
 }

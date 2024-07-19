@@ -1,6 +1,7 @@
 using super_ticketing_backend.DataBaseSettings;
 using super_ticketing_backend.Repositories;
 using super_ticketing_backend.Services;
+using super_ticketing_backend.Services.CountryService;
 using super_ticketing_backend.Services.UserService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<ITGuyService>();
+builder.Services.AddSingleton<CountryService>();
 builder.Services.AddSingleton<IUserRepository, UserRepository>(provider =>
 {
     var userService = provider.GetRequiredService<UserService>();
@@ -24,6 +26,11 @@ builder.Services.AddSingleton<IITGuyRepository, ITGuyRepository>(provider =>
 {
     var itGuyService = provider.GetRequiredService<ITGuyService>();
     return new ITGuyRepository(itGuyService.GetItGuysCollection());
+});
+builder.Services.AddSingleton<ICountryRepository, CountryRepository>(provider =>
+{
+    var countryService = provider.GetRequiredService<CountryService>();
+    return new CountryRepository(countryService.GetCountriesCollection());
 });
 builder.Services.Configure<DataBaseSettings>(
     builder.Configuration.GetSection("super-ticketing-backend"));
