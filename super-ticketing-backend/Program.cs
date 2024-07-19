@@ -41,6 +41,16 @@ builder.Services.AddSingleton<ICountryRepository, CountryRepository>(provider =>
 });
 builder.Services.Configure<DataBaseSettings>(
     builder.Configuration.GetSection("super-ticketing-backend"));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Allowlocalhost4200", policyBuilder =>
+    {
+        policyBuilder.WithOrigins("http://localhost:4200") //URL del front
+            .AllowAnyMethod()
+            .AllowCredentials()
+            .AllowAnyHeader();
+    });
+});
 builder.Services.AddMongoDb(builder.Configuration);
 var app = builder.Build();
 
@@ -54,6 +64,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("Allowlocalhost4200");
 
 app.MapControllers();
 
