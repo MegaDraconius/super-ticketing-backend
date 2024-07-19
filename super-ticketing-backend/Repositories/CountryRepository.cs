@@ -17,4 +17,13 @@ public class CountryRepository : ICountryRepository
 
     public async Task<Country?> GetAsync(string id) =>
         await _countryCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+
+    public async Task CreateAsync(Country newCountry) =>
+        await _countryCollection.InsertOneAsync(newCountry);
+
+    public async Task UpdateAsync(string id, Country updateCountry) =>
+        await _countryCollection.ReplaceOneAsync(x => x.Id == id, updateCountry);
+
+    public async Task RemoveAsync(string id) =>
+        await _countryCollection.DeleteOneAsync(x => x.Id == id);
 }

@@ -32,4 +32,45 @@ public class CountryController : ControllerBase
 
         return country;
     }
+
+    [HttpPost]
+    public async Task<IActionResult> Post(Country newCountry)
+    {
+        await _countryRepository.CreateAsync(newCountry);
+        
+        return CreatedAtAction(nameof(Get), new { id = newCountry.Id }, newCountry);
+    }
+
+    [HttpPut("{id:length(24)}")]
+    public async Task<IActionResult> Update(string id, Country updateCountry)
+    {
+        var country = await _countryRepository.GetAsync(id);
+
+        if (country is null)
+        {
+            return NotFound();
+        }
+
+        updateCountry.Id = country.Id;
+
+        await _countryRepository.UpdateAsync(id, updateCountry);
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id:length(24)}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        var country = await _countryRepository.GetAsync(id);
+        
+            if (country is null)
+            {
+                return NotFound();
+            }
+
+            await _countryRepository.RemoveAsync(id);
+
+            return NoContent();
+        
+    }
 }
