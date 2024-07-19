@@ -2,6 +2,7 @@ using super_ticketing_backend.DataBaseSettings;
 using super_ticketing_backend.Repositories;
 using super_ticketing_backend.Services;
 using super_ticketing_backend.Services.CountryService;
+using super_ticketing_backend.Services.TicketService;
 using super_ticketing_backend.Services.UserService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,10 +18,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<ITGuyService>();
 builder.Services.AddSingleton<CountryService>();
+builder.Services.AddSingleton<TicketService>();
 builder.Services.AddSingleton<IUserRepository, UserRepository>(provider =>
 {
     var userService = provider.GetRequiredService<UserService>();
     return new UserRepository(userService.GetUsersCollection());
+});
+builder.Services.AddSingleton<ITicketRepository, TicketRepository>(provider =>
+{
+    var ticketService = provider.GetRequiredService<TicketService>();
+    return new TicketRepository(ticketService.GetTikcetsCollection());
 });
 builder.Services.AddSingleton<IITGuyRepository, ITGuyRepository>(provider =>
 {
