@@ -7,6 +7,6 @@ public interface ITicketRepository
     Task<List<Tickets>> GetAsync();
     Task<Tickets?> GetAsync(string id);
     Task CreateAsync(Tickets newTicket);
-    Task UpdateAsync(string id, Tickets updateTicket);
+    Task UpdateAsync(Tickets updatedTicket);
     Task RemoveAsync(string id);
 }

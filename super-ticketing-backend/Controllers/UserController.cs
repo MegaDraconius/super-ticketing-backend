@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using super_ticketing_backend.Dto_s;
 using super_ticketing_backend.Models;
 using super_ticketing_backend.Repositories;
 using super_ticketing_backend.Services.UserService;
@@ -13,16 +15,26 @@ public class UserController : ControllerBase
 {
     
     private readonly IUserRepository _userRepository;
+    private readonly IMapper _mapper;
 
-    public UserController(IUserRepository usersRepository) =>
+    public UserController(IUserRepository usersRepository, IMapper mapper)
+    {
         _userRepository = usersRepository;
+        _mapper = mapper;
+    }
+        
 
     [HttpGet]
-    public async Task<List<Users>> Get() =>
-        await _userRepository.GetAsync();
+    public async Task<List<UserDto>> Get()
+    {
+        var user = await _userRepository.GetAsync();
+
+        return _mapper.Map<List<UserDto>>(user);
+    }
+       
 
     [HttpGet("{id:length(24)}")]
-    public async Task<ActionResult<Users>> Get(string id)
+    public async Task<ActionResult<UserDto>> Get(string id)
     {
         var user = await _userRepository.GetAsync(id);
 
@@ -31,19 +43,22 @@ public class UserController : ControllerBase
             return NotFound();
         }
 
-        return user;
+        var userDto = _mapper.Map<UserDto>(user);
+        return userDto;
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(Users newUser)
+    public async Task<IActionResult> Post(UserCreateDto userCreateDto)
     {
+        var newUser = _mapper.Map<Users>(userCreateDto);
         await _userRepository.CreateAsync(newUser);
 
-        return CreatedAtAction(nameof(Get), new { id = newUser.Id }, newUser);
+        var userDto = _mapper.Map<Users>(newUser);
+        return CreatedAtAction(nameof(Get), new { id = userDto.Id }, userDto);
     }
 
     [HttpPut("{id:length(24)}")]
-    public async Task<IActionResult> Update(string id, Users updatedUser)
+    public async Task<IActionResult> Update(string id, UserCreateDto updatedUserDto)
     {
         var user = await _userRepository.GetAsync(id);
 
@@ -52,10 +67,8 @@ public class UserController : ControllerBase
             return NotFound();
         }
 
-        updatedUser.Id = user.Id;
-
-        await _userRepository.UpdateAsync(id, updatedUser);
-
+        _mapper.Map(updatedUserDto, user);
+        await _userRepository.UpdateAsync(user);
         return NoContent();
     }
 

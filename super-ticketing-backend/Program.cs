@@ -4,6 +4,7 @@ using super_ticketing_backend.Services;
 using super_ticketing_backend.Services.CountryService;
 using super_ticketing_backend.Services.TicketService;
 using super_ticketing_backend.Services.UserService;
+using super_ticketing_backend.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,7 @@ builder.Services.AddSingleton<ICountryRepository, CountryRepository>(provider =>
     var countryService = provider.GetRequiredService<CountryService>();
     return new CountryRepository(countryService.GetCountriesCollection());
 });
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.Configure<DataBaseSettings>(
     builder.Configuration.GetSection("super-ticketing-backend"));
 builder.Services.AddCors(options =>

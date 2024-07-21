@@ -21,8 +21,8 @@ public class ITGuyRepository : IITGuyRepository
     public async Task CreateAsync(ITGuys newItGuy) =>
         await _itGuysCollection.InsertOneAsync(newItGuy);
 
-    public async Task UpdateAsync(string id, ITGuys updatedItGuy) =>
-        await _itGuysCollection.ReplaceOneAsync(x => x.Id == id, updatedItGuy);
+    public async Task UpdateAsync(ITGuys updatedItGuy) =>
+        await _itGuysCollection.ReplaceOneAsync(x => x.Id == updatedItGuy.Id, updatedItGuy);
 
     public async Task RemoveAsync(string id) =>
         await _itGuysCollection.DeleteOneAsync(x => x.Id == id);
