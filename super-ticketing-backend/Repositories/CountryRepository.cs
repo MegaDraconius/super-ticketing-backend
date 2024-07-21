@@ -21,8 +21,8 @@ public class CountryRepository : ICountryRepository
     public async Task CreateAsync(Country newCountry) =>
         await _countryCollection.InsertOneAsync(newCountry);
 
-    public async Task UpdateAsync(string id, Country updateCountry) =>
-        await _countryCollection.ReplaceOneAsync(x => x.Id == id, updateCountry);
+    public async Task UpdateAsync(Country updatedCountry) =>
+        await _countryCollection.ReplaceOneAsync(x => x.Id == updatedCountry.Id, updatedCountry);
 
     public async Task RemoveAsync(string id) =>
         await _countryCollection.DeleteOneAsync(x => x.Id == id);

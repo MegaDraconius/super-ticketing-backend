@@ -21,8 +21,8 @@ public class TicketRepository : ITicketRepository
     public async Task CreateAsync(Tickets newTicket) =>
         await _ticketsCollection.InsertOneAsync(newTicket);
 
-    public async Task UpdateAsync(string id, Tickets updateTicket) =>
-        await _ticketsCollection.ReplaceOneAsync(x => x.Id == id, updateTicket);
+    public async Task UpdateAsync(Tickets updatedTicket) =>
+        await _ticketsCollection.ReplaceOneAsync(x => x.Id == updatedTicket.Id, updatedTicket);
 
     public async Task RemoveAsync(string id) =>
         await _ticketsCollection.DeleteOneAsync(x => x.Id == id);

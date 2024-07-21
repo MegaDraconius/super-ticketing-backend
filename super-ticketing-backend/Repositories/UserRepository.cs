@@ -21,8 +21,8 @@ public class UserRepository : IUserRepository
     public async Task CreateAsync(Users newUser) =>
         await _usersCollection.InsertOneAsync(newUser);
 
-    public async Task UpdateAsync(string id, Users updatedUser) =>
-        await _usersCollection.ReplaceOneAsync(x => x.Id == id, updatedUser);
+    public async Task UpdateAsync(Users updatedUser) =>
+        await _usersCollection.ReplaceOneAsync(x => x.Id == updatedUser.Id, updatedUser);
 
     public async Task RemoveAsync(string id) =>
         await _usersCollection.DeleteOneAsync(x => x.Id == id);

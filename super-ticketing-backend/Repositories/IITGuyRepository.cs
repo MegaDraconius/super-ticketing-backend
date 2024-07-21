@@ -7,6 +7,7 @@ public interface IITGuyRepository
     Task<List<ITGuys>> GetAsync();
     Task<ITGuys?> GetAsync(string id);
     Task CreateAsync(ITGuys newItGuy);
-    Task UpdateAsync(string id, ITGuys updatedItGuy);
+    Task UpdateAsync(ITGuys updateditGuy);
     Task RemoveAsync(string id);
+    
 }
