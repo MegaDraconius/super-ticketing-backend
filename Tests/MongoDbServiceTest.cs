@@ -15,7 +15,11 @@ namespace Tests
         {
             var inMemorySettings = new Dictionary<string, string> {
                 {"super-ticketing-backend:ConnectionString", "mongodb+srv://rogeresteve5:JiQLT0VAtZryqrJF@ticketing.dt8mqku.mongodb.net/"},
-                {"super-ticketing-backend:DatabaseName", "Ticketing"}
+                {"super-ticketing-backend:DatabaseName", "Ticketing"},
+                {"super-ticketing-backend:UsersCollectionName", "User"},
+                {"super-ticketing-backend:ITGuysCollectionName", "ITEmployees"},
+                {"super-ticketing-backend:CountryCollectionName", "Country"},
+                {"super-ticketing-backend:TicketsCollectionName", "Ticket"}
             };
 
             _configuration = new ConfigurationBuilder()
