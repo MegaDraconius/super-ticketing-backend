@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using super_ticketing_backend.Dto_s;
 using super_ticketing_backend.Models;
 using super_ticketing_backend.Repositories;
-using super_ticketing_backend.Services.UserService;
+
 
 namespace super_ticketing_backend.Controllers;
 
