@@ -5,6 +5,9 @@
     &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.MongoDbConnectionTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.CountryRepositoryTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.UserRepositoryTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.ControllerTests.CountryControllerTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.TicketRepositoryTest.CreateAsync_AddNewTicket&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.ControllerTests.UserControllerTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
