@@ -53,7 +53,7 @@ public class UserController : ControllerBase
         var newUser = _mapper.Map<Users>(userCreateDto);
         await _userRepository.CreateAsync(newUser);
 
-        var userDto = _mapper.Map<Users>(newUser);
+        var userDto = _mapper.Map<UserDto>(newUser);
         return CreatedAtAction(nameof(Get), new { id = userDto.Id }, userDto);
     }
 

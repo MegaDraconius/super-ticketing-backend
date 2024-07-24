@@ -10,8 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Tests/ControllerTests/CountryControllerTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/ControllerTests/UserControllerTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/MongoDbServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/MongoDbServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,14 +27,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.super-ticketing-backend: http.executor": "Run",
-    "git-widget-placeholder": "feature/tests-refactor-mongo-service-connection",
+    "git-widget-placeholder": "feature/tests",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.super-ticketing-backend: http">
+  <component name="RunManager">
     <configuration name="super-ticketing-backend: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/super-ticketing-backend/super-ticketing-backend.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -48,9 +50,6 @@
         <option name="Build" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue=".NET Launch Settings Profile.super-ticketing-backend: http" />
-    </list>
   </component>
   <component name="TaskManager">
     <servers />
