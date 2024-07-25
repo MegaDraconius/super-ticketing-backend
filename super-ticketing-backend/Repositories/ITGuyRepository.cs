@@ -20,6 +20,9 @@ public class ITGuyRepository : IITGuyRepository
 
     public async Task CreateAsync(ITGuys newItGuy) =>
         await _itGuysCollection.InsertOneAsync(newItGuy);
+    
+    public async Task<ITGuys?> GetByEmailAsync(string email) =>
+        await _itGuysCollection.Find(x => x.ItGuyEmail == email).FirstOrDefaultAsync();
 
     public async Task UpdateAsync(ITGuys updatedItGuy) =>
         await _itGuysCollection.ReplaceOneAsync(x => x.Id == updatedItGuy.Id, updatedItGuy);
