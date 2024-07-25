@@ -26,6 +26,10 @@ public class Tickets
     [JsonPropertyName("ReportDate")]
     public DateTime ReportDate { get; set; }
     
+    [BsonElement("SolvedDate")]
+    [JsonPropertyName("SolvedDate")]
+    public DateTime SolvedDate { get; set; }
+    
     [BsonElement("Status")]
     [JsonPropertyName("Status")]
     public string Status { get; set; }
@@ -38,6 +42,10 @@ public class Tickets
     [BsonElement("Priority")]
     [JsonPropertyName("Priority")]
     public string Priority { get; set; }
+    
+    [BsonElement("Photo")]
+    [JsonPropertyName("Photo")]
+    public string Photo { get; set; }
 
     [BsonRepresentation(BsonType.ObjectId)]
     [BsonElement("UserId")]
@@ -47,6 +55,5 @@ public class Tickets
     [BsonRepresentation(BsonType.ObjectId)]
     [BsonElement("ITEmployees")]
     [JsonPropertyName("ITEmployees")]
-    public string ITEmployees { get; set; }
-    
+    public string ITGuyId { get; set; }
 }

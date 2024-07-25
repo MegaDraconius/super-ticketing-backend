@@ -9,15 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84019947-57d9-41e6-9906-e2a2225773ab" name="Changes" comment="">
 
-      <change afterPath="$PROJECT_DIR$/Tests/RepositoryTests/CountryRepositoryTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/RepositoryTests/ItGuyRepositoryTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/RepositoryTests/TicketRepositoryTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/RepositoryTests/UserRepositoryTest.cs" afterDir="false" />
+    <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketUpdateDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Tests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/ItGuyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/ItGuyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Dto's/ItGuyCreateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/ItGuyCreateDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Dto's/ItGuyDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/ItGuyDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketCreateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketCreateDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Dto's/UserCreateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/UserCreateDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Dto's/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Models/ITGuys.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/ITGuys.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Models/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/Users.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/CountryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/CountryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/ICountryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/ICountryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/IITGuyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/IITGuyRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/ITGuyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/ITGuyRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Utilities/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Utilities/AutoMapperProfile.cs" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,17 +65,18 @@
     <option name="showLibraryContents" value="true" />
   </component>
 
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.super-ticketing-backend: http.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/add-repositories-test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.super-ticketing-backend: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/change-country-relations&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
@@ -116,11 +132,16 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.super-ticketing-backend: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.super-ticketing-backend: https" />
+      <item itemvalue=".NET Launch Settings Profile.super-ticketing-backend: http" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="84019947-57d9-41e6-9906-e2a2225773ab" name="Changes" comment="" />
+      <changelist id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="" />
       <created>1721288511227</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -129,7 +150,10 @@
       <workItem from="1721295695019" duration="316000" />
       <workItem from="1721296032043" duration="317000" />
       <workItem from="1721296371683" duration="6118000" />
-      <workItem from="1721717914285" duration="3873000" />
+      <workItem from="1721717914285" duration="9415000" />
+      <workItem from="1721813117703" duration="6868000" />
+      <workItem from="1721822408628" duration="9072000" />
+
     </task>
     <servers />
   </component>

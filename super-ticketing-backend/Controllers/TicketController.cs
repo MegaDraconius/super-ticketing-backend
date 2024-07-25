@@ -3,94 +3,136 @@ using Microsoft.AspNetCore.Mvc;
 using super_ticketing_backend.Dto_s;
 using super_ticketing_backend.Models;
 using super_ticketing_backend.Repositories;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
-namespace super_ticketing_backend.Controllers;
-
-[ApiController]
-[Route("api/[controller]")]
-
-public class TicketController : ControllerBase
+namespace super_ticketing_backend.Controllers
 {
-    private readonly ITicketRepository _ticketRepository;
-    private readonly IMapper _mapper;
-
-    public TicketController(ITicketRepository ticketRepository, IMapper mapper)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class TicketController : ControllerBase
     {
-        _ticketRepository = ticketRepository;
-        _mapper = mapper;
-    }
-        
+        private readonly ITicketRepository _ticketRepository;
+        private readonly IUserRepository _userRepository;
+        private readonly IITGuyRepository _itGuyRepository;
+        private readonly IMapper _mapper;
 
-    [HttpGet]
-    public async Task<List<TicketDto>> Get()
-    {
-        var tickets = await _ticketRepository.GetAsync();
-        
-        return _mapper.Map<List<TicketDto>>(tickets);
-
-        
-    }
-
-    [HttpGet("{id:length(24)}")]
-    public async Task<ActionResult<TicketDto>> Get(string id)
-    {
-        var ticket = await _ticketRepository.GetAsync(id);
-        
-        if (ticket is null)
+        public TicketController(
+            ITicketRepository ticketRepository,
+            IUserRepository userRepository,
+            IITGuyRepository itGuyRepository,
+            IMapper mapper)
         {
-            return NotFound();
+            _ticketRepository = ticketRepository;
+            _userRepository = userRepository;
+            _itGuyRepository = itGuyRepository;
+            _mapper = mapper;
         }
 
-        var ticketDto = _mapper.Map<TicketDto>(ticket);
-        return ticketDto;
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> Post(TicketCreateDto ticketCreateDto)
-    {
-        var newticket = _mapper.Map<Tickets>(ticketCreateDto);
-        await _ticketRepository.CreateAsync(newticket);
-
-        var ticketDto = _mapper.Map<TicketDto>(newticket);
-        
-        var userEmail = "alexmrtc@gmail.com"; //LLamar a una función para obtener el email del user que envía el formulario
-        var about = "Ticket Creado";
-        await _ticketRepository.SendMail(userEmail, about);
-        
-        return CreatedAtAction(nameof(Get), new { id = ticketDto.Id }, ticketDto);
-    }
-    
-    [HttpPut("{id:length(24)}")]
-    public async Task<IActionResult> Update(string id, TicketCreateDto updatedTicketDto)
-    {
-        var ticket = await _ticketRepository.GetAsync(id);
-
-        if (ticket is null)
+        [HttpGet]
+        public async Task<List<TicketDto>> Get()
         {
-            return NotFound();
+            var tickets = await _ticketRepository.GetAsync();
+            var ticketDtos = _mapper.Map<List<TicketDto>>(tickets);
+
+            foreach (var ticketDto in ticketDtos)
+            {
+                var user = await _userRepository.GetAsync(ticketDto.UserId);
+                var itGuy = await _itGuyRepository.GetAsync(ticketDto.ItGuyId);
+
+                ticketDto.UserEmail = user?.UserEmail;
+                ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
+            }
+
+            return ticketDtos;
         }
 
-        _mapper.Map(updatedTicketDto, ticket);
-        await _ticketRepository.UpdateAsync(ticket);
-        var userEmail = "alexmrtc@gmail.com"; //LLamar a una función para obtener el email del user que envía el formulario
-        var about = "Ticket Creado";
-        await _ticketRepository.SendMail(userEmail, about);
-
-        return NoContent();
-    }
-
-    [HttpDelete("{id:length(24)}")]
-    public async Task<IActionResult> Delete(string id)
-    {
-        var ticket = await _ticketRepository.GetAsync(id);
-
-        if (ticket is null)
+        [HttpGet("{id:length(24)}")]
+        public async Task<ActionResult<TicketDto>> Get(string id)
         {
-            return NotFound();
+            var ticket = await _ticketRepository.GetAsync(id);
+
+            if (ticket is null)
+            {
+                return NotFound();
+            }
+
+            var ticketDto = _mapper.Map<TicketDto>(ticket);
+
+            var user = await _userRepository.GetAsync(ticketDto.UserId);
+            var itGuy = await _itGuyRepository.GetAsync(ticketDto.ItGuyId);
+
+            ticketDto.UserEmail = user?.UserEmail;
+            ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
+
+            return ticketDto;
         }
 
-        await _ticketRepository.RemoveAsync(id);
+        [HttpPost]
+        public async Task<IActionResult> Post(TicketCreateDto ticketCreateDto)
+        {
+            var newTicket = _mapper.Map<Tickets>(ticketCreateDto);
+            await _ticketRepository.CreateAsync(newTicket);
 
-        return NoContent();
+            var ticketDto = _mapper.Map<TicketDto>(newTicket);
+
+            var user = await _userRepository.GetAsync(ticketDto.UserId);
+            ticketDto.UserEmail = user?.UserEmail;
+            
+            var userEmail = ticketDto.UserEmail;
+            var about = ticketDto.Title;
+            await _ticketRepository.SendMail(userEmail, about);
+
+            return CreatedAtAction(nameof(Get), new { id = ticketDto.Id }, ticketDto);
+        }
+
+
+        
+        [HttpPut("{id:length(24)}")]
+        public async Task<IActionResult> Update(string id, TicketUpdateDto updatedTicketDto)
+        {
+            var ticket = await _ticketRepository.GetAsync(id);
+
+            if (ticket is null)
+            {
+                return NotFound();
+            }
+
+            var user = await _userRepository.GetByEmailAsync(updatedTicketDto.UserEmail);
+            if (user != null)
+            {
+                ticket.UserId = user.Id;
+            }
+
+            var itGuy = await _itGuyRepository.GetByEmailAsync(updatedTicketDto.ItGuyEmail);
+            if (itGuy != null)
+            {
+                ticket.ITGuyId = itGuy.Id;
+            }
+
+            _mapper.Map(updatedTicketDto, ticket);
+            await _ticketRepository.UpdateAsync(ticket);
+
+            var ticketDto = _mapper.Map<TicketDto>(ticket);
+            ticketDto.UserEmail = user?.UserEmail;
+            ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id:length(24)}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var ticket = await _ticketRepository.GetAsync(id);
+
+            if (ticket is null)
+            {
+                return NotFound();
+            }
+
+            await _ticketRepository.RemoveAsync(id);
+
+            return NoContent();
+        }
     }
 }

@@ -17,6 +17,9 @@ public class CountryRepository : ICountryRepository
 
     public async Task<Country?> GetAsync(string id) =>
         await _countryCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+    
+    public async Task<Country?> GetByNameAsync(string countryCode) =>
+        await _countryCollection.Find(x => x.CountryCode == countryCode).FirstOrDefaultAsync(); // Implementación del nuevo método
 
     public async Task CreateAsync(Country newCountry) =>
         await _countryCollection.InsertOneAsync(newCountry);
