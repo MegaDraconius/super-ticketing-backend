@@ -42,6 +42,8 @@ namespace super_ticketing_backend.Controllers
 
                 ticketDto.UserEmail = user?.UserEmail;
                 ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
+                
+                Console.WriteLine(ticketDto.UserEmail);
             }
 
             return ticketDtos;
@@ -71,6 +73,7 @@ namespace super_ticketing_backend.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(TicketCreateDto ticketCreateDto)
         {
+            Console.WriteLine(ticketCreateDto.Title);
             var newTicket = _mapper.Map<Tickets>(ticketCreateDto);
             await _ticketRepository.CreateAsync(newTicket);
 
