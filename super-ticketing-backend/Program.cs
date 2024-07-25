@@ -4,6 +4,8 @@ using super_ticketing_backend.Models;
 using super_ticketing_backend.Repositories;
 using super_ticketing_backend.Services;
 using super_ticketing_backend.Utilities;
+using System.Net.Mail;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -52,6 +52,11 @@ public class TicketController : ControllerBase
         await _ticketRepository.CreateAsync(newticket);
 
         var ticketDto = _mapper.Map<TicketDto>(newticket);
+        
+        var userEmail = "alexmrtc@gmail.com"; //LLamar a una función para obtener el email del user que envía el formulario
+        var about = "Ticket Creado";
+        await _ticketRepository.SendMail(userEmail, about);
+        
         return CreatedAtAction(nameof(Get), new { id = ticketDto.Id }, ticketDto);
     }
     
@@ -67,6 +72,9 @@ public class TicketController : ControllerBase
 
         _mapper.Map(updatedTicketDto, ticket);
         await _ticketRepository.UpdateAsync(ticket);
+        var userEmail = "alexmrtc@gmail.com"; //LLamar a una función para obtener el email del user que envía el formulario
+        var about = "Ticket Creado";
+        await _ticketRepository.SendMail(userEmail, about);
 
         return NoContent();
     }
