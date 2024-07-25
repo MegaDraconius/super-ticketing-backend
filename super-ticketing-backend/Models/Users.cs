@@ -10,13 +10,14 @@ public class Users
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
     
-    [BsonElement("Country")]
-    [JsonPropertyName("Country")]
-    public string Country { get; set; }
+    [BsonElement("CountryId")]
+    [JsonPropertyName("CountryId")]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string CountryId { get; set; }
     
     [BsonElement("Email")]
     [JsonPropertyName("Email")]
-    public string Email { get; set; }
+    public string UserEmail { get; set; }
     
     [BsonElement("pwd")]
     [JsonPropertyName("pwd")]

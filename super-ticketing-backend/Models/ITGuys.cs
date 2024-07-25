@@ -10,9 +10,9 @@ public class ITGuys
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
     
-    [BsonElement("Name")]
-    [JsonPropertyName("Name")]
-    public string Name { get; set; }
+    [BsonElement("ItGuyName")]
+    [JsonPropertyName("ItGuyName")]
+    public string ItGuyName { get; set; }
     
     [BsonElement("Surname")]
     [JsonPropertyName("Surname")]
@@ -26,12 +26,13 @@ public class ITGuys
     [JsonPropertyName("Role")]
     public string Role { get; set; }
     
-    [BsonElement("Country")]
-    [JsonPropertyName("Country")]
-    public string Country { get; set; }
+    [BsonElement("CountryId")]
+    [JsonPropertyName("CountryId")]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string CountryId { get; set; }
     
     [BsonElement("email")]
     [JsonPropertyName("email")]
-    public string Email { get; set; }
+    public string ItGuyEmail { get; set; }
        
 }
