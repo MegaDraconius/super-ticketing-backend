@@ -9,5 +9,6 @@ public interface IITGuyRepository
     Task CreateAsync(ITGuys newItGuy);
     Task UpdateAsync(ITGuys updateditGuy);
     Task RemoveAsync(string id);
+    Task<ITGuys?> GetByEmailAsync(string email);
     
 }
