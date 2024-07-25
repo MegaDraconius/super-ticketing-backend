@@ -78,32 +78,15 @@ namespace super_ticketing_backend.Controllers
 
             var user = await _userRepository.GetAsync(ticketDto.UserId);
             ticketDto.UserEmail = user?.UserEmail;
+            
+            var userEmail = ticketDto.UserEmail;
+            var about = ticketDto.Title;
+            await _ticketRepository.SendMail(userEmail, about);
 
             return CreatedAtAction(nameof(Get), new { id = ticketDto.Id }, ticketDto);
         }
 
-        // [HttpPut("{id:length(24)}")]
-        // public async Task<IActionResult> Update(string id, TicketUpdateDto updatedTicketDto)
-        // {
-        //     var ticket = await _ticketRepository.GetAsync(id);
-        //
-        //     if (ticket is null)
-        //     {
-        //         return NotFound();
-        //     }
-        //
-        //     _mapper.Map(updatedTicketDto, ticket);
-        //     await _ticketRepository.UpdateAsync(ticket);
-        //
-        //     var user = await _userRepository.GetAsync(ticket.UserId);
-        //     var itGuy = await _itGuyRepository.GetAsync(ticket.ITGuyId);
-        //
-        //     var ticketDto = _mapper.Map<TicketDto>(ticket);
-        //     ticketDto.UserEmail = user?.UserEmail;
-        //     ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
-        //
-        //     return NoContent();
-        // }
+
         
         [HttpPut("{id:length(24)}")]
         public async Task<IActionResult> Update(string id, TicketUpdateDto updatedTicketDto)
