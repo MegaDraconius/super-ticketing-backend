@@ -9,6 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketUpdateDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" afterDir="false" />
@@ -31,6 +32,7 @@
       <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/IUserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/UserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Utilities/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Utilities/AutoMapperProfile.cs" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +64,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.super-ticketing-backend: http.executor&quot;: &quot;Run&quot;,
@@ -73,6 +76,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
@@ -149,6 +153,7 @@
       <workItem from="1721717914285" duration="9415000" />
       <workItem from="1721813117703" duration="6868000" />
       <workItem from="1721822408628" duration="9072000" />
+
     </task>
     <servers />
   </component>
