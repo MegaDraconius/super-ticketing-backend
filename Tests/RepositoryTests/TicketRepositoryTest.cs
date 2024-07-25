@@ -9,9 +9,7 @@ namespace Tests;
 public class TicketRepositoryTest : IDisposable
 {
     private readonly MongoDbRunner _runner;
-
     private readonly IMongoCollection<Tickets> _ticketCollection;
-
     private readonly IMongoCollection<ITGuys> _itGuyCollection;
     private readonly IMongoCollection<Users> _userCollection;
     private readonly IMongoCollection<Country> _countryCollection;
@@ -22,6 +20,7 @@ public class TicketRepositoryTest : IDisposable
     public TicketRepositoryTest()
     {
         _runner = MongoDbRunner.Start();
+        
         var client = new MongoClient(_runner.ConnectionString);
         _database = client.GetDatabase("TestDatabase");
         _ticketCollection = _database.GetCollection<Tickets>("Ticket");
@@ -34,20 +33,20 @@ public class TicketRepositoryTest : IDisposable
         var itGuy = new ITGuys
         {
             Id = ObjectId.GenerateNewId().ToString(),
-            Name = "Matheus",
+            ItGuyName = "Matheus",
             Surname = "Da Sousa",
             Pwd = "Hello1!",
             Role = "Administrator",
-            Country = "Spain",
-            Email = "matheusdasousa@gmail.com"
+            CountryId = ObjectId.GenerateNewId().ToString(),
+            ItGuyEmail = "matheusdasousa@gmail.com"
         };
         _itGuyCollection.InsertOne(itGuy);
 
         var user = new Users
         {
             Id = ObjectId.GenerateNewId().ToString(),
-            Country = "Portugal",
-            Email = "test@test.com",
+            CountryId = ObjectId.GenerateNewId().ToString(),
+            UserEmail = "test@test.com",
             Pwd = "Hello1!",
             Role = "Tech"
         };
@@ -73,7 +72,7 @@ public class TicketRepositoryTest : IDisposable
             Country = country.Id,
             Priority = "High",
             UserId = user.Id,
-            ITEmployees = itGuy.Id
+            ITGuyId = itGuy.Id
         };
         _ticketCollection.InsertOne(ticket);
     }
@@ -91,7 +90,7 @@ public class TicketRepositoryTest : IDisposable
     {
         var ticket = await _ticketCollection.Find(_ => true).FirstOrDefaultAsync();
         var result = await _ticketRepository.GetAsync(ticket.Id);
-        Assert.NotNull(result);
+        Assert.Equal(ticket.Id,result.Id);
     }
 
     [Fact]
@@ -117,7 +116,7 @@ public class TicketRepositoryTest : IDisposable
             Country = (await _countryCollection.Find(_ => true).FirstOrDefaultAsync()).Id,
             Priority = "High",
             UserId = (await _userCollection.Find(_ => true).FirstOrDefaultAsync()).Id,
-            ITEmployees = (await _itGuyCollection.Find(_ => true).FirstOrDefaultAsync()).Id
+            ITGuyId = (await _itGuyCollection.Find(_ => true).FirstOrDefaultAsync()).Id
         };
 
         await _ticketRepository.CreateAsync(newTicket);

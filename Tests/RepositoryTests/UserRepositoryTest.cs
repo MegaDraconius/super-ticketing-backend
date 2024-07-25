@@ -27,8 +27,8 @@ namespace Tests;
             var user = new Users
             {
                 Id = ObjectId.GenerateNewId().ToString(),
-                Country = "TestCountry",
-                Email = "test@example.com",
+                CountryId = ObjectId.GenerateNewId().ToString(),
+                UserEmail = "test@example.com",
                 Pwd = "Hello1!",
                 Role = "Admin"
             };
@@ -78,10 +78,10 @@ namespace Tests;
             var newUser = new Users
             {
                 Id = ObjectId.GenerateNewId().ToString(),
-                Country = "NewCountry",
-                Email = "new@example.com",
-                Pwd = "newpassword",
-                Role = "User"
+                CountryId = ObjectId.GenerateNewId().ToString(),
+                UserEmail = "example@example.com",
+                Pwd = "Hello1!",
+                Role = "Admin"
             };
 
             // Act
@@ -97,14 +97,14 @@ namespace Tests;
         {
             // Arrange
             var user = await _usersCollection.Find(_ => true).FirstOrDefaultAsync();
-            user.Country = "UpdatedCountry";
+            user.CountryId = ObjectId.GenerateNewId().ToString();
 
             // Act
             await _userRepository.UpdateAsync(user);
             var updatedUser = await _userRepository.GetAsync(user.Id);
 
             // Assert
-            Assert.Equal("UpdatedCountry", updatedUser.Country);
+            Assert.Equal(user.CountryId, updatedUser.CountryId);
         }
 
         [Fact]
