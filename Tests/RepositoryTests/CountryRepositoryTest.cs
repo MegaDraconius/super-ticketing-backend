@@ -21,14 +21,25 @@ public class CountryRepositoryTest : IDisposable
         _countryCollection = _database.GetCollection<Country>("Country");
         _countryRepository = new CountryRepository(_countryCollection);
 
-        var country = new Country
+        var countries = new List<Country>
         {
-            Id = ObjectId.GenerateNewId().ToString(),
-            CountryCode = "POR",
-            CountryName = "Portugal",
-            CountryMainLanguage = "Portuguese"
+            new Country
+            {
+                Id = ObjectId.GenerateNewId().ToString(),
+                CountryCode = "ESP",
+                CountryName = "Spain",
+                CountryMainLanguage = "Spanish"
+            },
+
+            new Country
+            {
+                Id = ObjectId.GenerateNewId().ToString(),
+                CountryCode = "POR",
+                CountryName = "Portugal",
+                CountryMainLanguage = "Portuguese"
+            }
         };
-        _countryCollection.InsertOne(country);
+        _countryCollection.InsertMany(countries);
     }
 
     [Fact]
@@ -47,6 +58,16 @@ public class CountryRepositoryTest : IDisposable
         var result = await _countryRepository.GetAsync(country.Id);
 
         Assert.NotNull(result);
+    }
+
+    [Fact]
+    public async Task GetByNameAsync()
+    {
+        var countryCode = "ESP";
+        var result = await _countryRepository.GetByNameAsync(countryCode);
+
+        Assert.NotNull(result);
+        Assert.Equal("Spain",result.CountryName);
     }
 
     [Fact]

@@ -21,16 +21,17 @@ public class ItGuyRepositoryTest: IDisposable
         _database = client.GetDatabase("TestDatabase");
         _itGuyCollection = _database.GetCollection<ITGuys>("ItGuys");
         _itGuyRepository = new ITGuyRepository(_itGuyCollection);
+        
 
         var itGuy = new ITGuys
         {
             Id = ObjectId.GenerateNewId().ToString(),
-            Name = "Roger",
+            ItGuyName = "Roger",
             Surname = "Esteve",
             Pwd = "Hello1!",
             Role = "Administrator",
-            Country = "Spain",
-            Email = "rogeresteve@gmail.com"
+            ItGuyEmail = "rogeresteve@gmail.com",
+            CountryId = ObjectId.GenerateNewId().ToString()
         };
         _itGuyCollection.InsertOne(itGuy);
         }
@@ -69,12 +70,12 @@ public class ItGuyRepositoryTest: IDisposable
             var newiTGuy = new ITGuys
             {
                 Id = ObjectId.GenerateNewId().ToString(),
-                Name = "Sara",
+                ItGuyName = "Sara",
                 Surname = "Jorja",
-                Pwd = "Hello1!",
+                Pwd = "Hello31!",
                 Role = "Administrator",
-                Country = "Spain",
-                Email = "sarajorja@gmail.com"
+                ItGuyEmail = "sarajorja@gmail.com",
+                CountryId = ObjectId.GenerateNewId().ToString()
             };
 
             await _itGuyRepository.CreateAsync(newiTGuy);
@@ -88,12 +89,12 @@ public class ItGuyRepositoryTest: IDisposable
         public async Task UpdateAsync_UpdateExsitingUser()
         {
             var itGuy = await _itGuyCollection.Find(_ => true).FirstOrDefaultAsync();
-            itGuy.Name = "Alejandro";
+            itGuy.ItGuyName = "Alejandro";
 
             await _itGuyRepository.UpdateAsync(itGuy);
             var updatedItGuy = await _itGuyRepository.GetAsync(itGuy.Id);
             
-            Assert.Equal("Alejandro", updatedItGuy.Name);
+            Assert.Equal("Alejandro", updatedItGuy.ItGuyName);
         }
 
         [Fact]
