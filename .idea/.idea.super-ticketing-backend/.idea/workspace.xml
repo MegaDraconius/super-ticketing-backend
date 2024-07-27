@@ -10,15 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Services/MailingService/IMailingSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Services/MailingService/MailingSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/MongoDbServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/MongoDbServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/ItGuyRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/ItGuyRepositoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/TicketRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/TicketRepositoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/UserRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/UserRepositoryTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketCreateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketCreateDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/ITicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/ITicketRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/TicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/TicketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +28,11 @@
     <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -38,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/super-ticketing-backend/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/super-ticketing-backend/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -50,26 +55,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.super-ticketing-backend: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;refactor/email&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.super-ticketing-backend: http.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "refactor/email",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/home/lpcbcn044/.config/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
-      &quot;/home/lpcbcn044/.config/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
-      &quot;/home/lpcbcn044/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
+    ],
+    "rider.external.source.directories": [
+      "/home/lpcbcn044/.config/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
+      "/home/lpcbcn044/.config/JetBrains/Rider2024.1/resharper-host/SourcesCache",
+      "/home/lpcbcn044/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.super-ticketing-backend: http">
     <configuration name="super-ticketing-backend: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/super-ticketing-backend/super-ticketing-backend.csproj" />
@@ -146,6 +154,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
