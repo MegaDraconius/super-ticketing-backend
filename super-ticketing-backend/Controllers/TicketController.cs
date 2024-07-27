@@ -5,6 +5,7 @@ using super_ticketing_backend.Models;
 using super_ticketing_backend.Repositories;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using super_ticketing_backend.Services.MailingService;
 
 namespace super_ticketing_backend.Controllers
 {
@@ -15,17 +16,15 @@ namespace super_ticketing_backend.Controllers
         private readonly ITicketRepository _ticketRepository;
         private readonly IUserRepository _userRepository;
         private readonly IITGuyRepository _itGuyRepository;
+        private readonly IMailingSystem _mailingSystem;
         private readonly IMapper _mapper;
 
-        public TicketController(
-            ITicketRepository ticketRepository,
-            IUserRepository userRepository,
-            IITGuyRepository itGuyRepository,
-            IMapper mapper)
+        public TicketController(ITicketRepository ticketRepository, IUserRepository userRepository, IITGuyRepository itGuyRepository, IMailingSystem mailingSystem, IMapper mapper)
         {
             _ticketRepository = ticketRepository;
             _userRepository = userRepository;
             _itGuyRepository = itGuyRepository;
+            _mailingSystem = mailingSystem;
             _mapper = mapper;
         }
 
@@ -71,22 +70,31 @@ namespace super_ticketing_backend.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(TicketCreateDto ticketCreateDto)
         {
-            var newTicket = _mapper.Map<Tickets>(ticketCreateDto);
-            await _ticketRepository.CreateAsync(newTicket);
+            try
+            {
+                var newTicket = _mapper.Map<Tickets>(ticketCreateDto);
+                await _ticketRepository.CreateAsync(newTicket);
+                
+                var ticketDto = _mapper.Map<TicketDto>(newTicket);
+                
+                var user = await _userRepository.GetAsync(ticketDto.UserId);
+                ticketDto.UserEmail = user?.UserEmail;
+                
+                var userEmail = ticketDto.UserEmail;
+                var about = ticketDto.Title;
+                var trackingId = ticketDto.TrackingId;
 
-            var ticketDto = _mapper.Map<TicketDto>(newTicket);
-
-            var user = await _userRepository.GetAsync(ticketDto.UserId);
-            ticketDto.UserEmail = user?.UserEmail;
-            
-            var userEmail = ticketDto.UserEmail;
-            var about = ticketDto.Title;
-            await _ticketRepository.SendMail(userEmail, about);
-
-            return CreatedAtAction(nameof(Get), new { id = ticketDto.Id }, ticketDto);
+                await _mailingSystem.SendCreationMail(userEmail, about, trackingId);
+                // await _ticketRepository.SendMail(userEmail, about);
+                
+                return CreatedAtAction(nameof(Get), new { id = ticketDto.Id }, ticketDto);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
-
-
         
         [HttpPut("{id:length(24)}")]
         public async Task<IActionResult> Update(string id, TicketUpdateDto updatedTicketDto)
@@ -118,6 +126,21 @@ namespace super_ticketing_backend.Controllers
             ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
 
             return NoContent();
+        }
+
+        [HttpPatch("{id:length(24)}")]
+        public async Task<ActionResult> ChangeStatus(string id, string statusValue)
+        {
+            var ticket = await _ticketRepository.GetAsync(id);
+
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+
+            await _ticketRepository.UpdateStatus(id, statusValue);
+
+            return Ok();
         }
 
         [HttpDelete("{id:length(24)}")]
