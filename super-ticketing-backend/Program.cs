@@ -6,6 +6,7 @@ using super_ticketing_backend.Services;
 using super_ticketing_backend.Utilities;
 using System.Net.Mail;
 using System.Net;
+using super_ticketing_backend.Services.MailingService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,9 @@ builder.Services.AddSingleton<ICountryRepository, CountryRepository>(provider =>
     var countryCollection = provider.GetRequiredService<IMongoCollection<Country>>();
     return new CountryRepository(countryCollection);
 });
+
+builder.Services.AddScoped<IMailingSystem, MailingSystem>();
+
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.Configure<DataBaseSettings>(
     builder.Configuration.GetSection("super-ticketing-backend"));

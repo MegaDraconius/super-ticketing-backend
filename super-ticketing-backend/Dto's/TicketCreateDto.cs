@@ -2,6 +2,7 @@ namespace super_ticketing_backend.Dto_s;
 
 public class TicketCreateDto
 {
+    public string TrackingId { get; set; }
     public string Title { get; set; }
     public string Description { get; set; }
     public DateTime ReportDate { get; set; }
