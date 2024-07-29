@@ -10,11 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/TicketStatus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Services/PhotoService/IPhotoService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Services/PhotoService/PhileUploadOperation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Services/PhotoService/PhotoService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/MongoDbServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/MongoDbServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/ItGuyRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/ItGuyRepositoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/TicketRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/TicketRepositoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/UserRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/UserRepositoryTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/statusValues" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,8 +52,10 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/2aade6beb02ea367fd97c4070a4198802fe61c03/src/libraries/System.Private.CoreLib/src/System/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/573461dc897731c11d6166574b77a8c3aabba220/src/libraries/Microsoft.Extensions.DependencyInjection.Abstractions/src/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/649f9a5315084d038b64e29ea11b1fb5b920/01/96ae4b9c/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b2b917c507d64d0980727dbdd83b6585c8f8a0/d8/1e4eb453/IntrinsicAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b555b241b69d56fb42b4bc489283287efca921d278ab43024db6091625b30/IMongoDatabase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/super-ticketing-backend/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/super-ticketing-backend/appsettings.json" root0="FORCE_HIGHLIGHTING" />
@@ -68,7 +77,8 @@
   "keyToString": {
     ".NET Launch Settings Profile.super-ticketing-backend: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
+
+    "git-widget-placeholder": "feature/add-foto-from-backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,9 +91,9 @@
       "mongo"
     ],
     "rider.external.source.directories": [
-      "C:\\Users\\Usuario\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Usuario\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Usuario\\AppData\\Local\\Symbols\\src"
+      "/home/lpcbcn044/.config/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
+      "/home/lpcbcn044/.config/JetBrains/Rider2024.1/resharper-host/SourcesCache",
+      "/home/lpcbcn044/.local/share/Symbols/src"
     ]
   }
 }]]></component>
@@ -157,10 +167,6 @@
       <workItem from="1721903351386" duration="2595000" />
       <workItem from="1721979613744" duration="4774000" />
       <workItem from="1721987764355" duration="6281000" />
-      <workItem from="1722104509740" duration="80000" />
-      <workItem from="1722104621249" duration="45000" />
-      <workItem from="1722233015922" duration="48000" />
-      <workItem from="1722272655498" duration="966000" />
     </task>
     <servers />
   </component>
@@ -174,19 +180,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="dev" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
