@@ -123,11 +123,11 @@ namespace super_ticketing_backend.Controllers
                 return NotFound();
             }
 
-            var user = await _userRepository.GetByEmailAsync(updatedTicketDto.UserEmail);
-            if (user != null)
-            {
-                ticket.UserId = user.Id;
-            }
+            //var user = await _userRepository.GetByEmailAsync(updatedTicketDto.UserEmail);
+            //if (user != null)
+            //{
+            //    ticket.UserId = user.Id;
+            //}
 
             var itGuy = await _itGuyRepository.GetByEmailAsync(updatedTicketDto.ItGuyEmail);
             if (itGuy != null)
@@ -135,13 +135,18 @@ namespace super_ticketing_backend.Controllers
                 ticket.ITGuyId = itGuy.Id;
             }
 
-            
+            if (updatedTicketDto.Status == "Resuelto")
+            {
+                var currentDate = DateTime.Now;
+                ticket.SolvedDate = currentDate;
+                Console.WriteLine(currentDate);
+            }
 
             _mapper.Map(updatedTicketDto, ticket);
             await _ticketRepository.UpdateAsync(ticket);
 
             var ticketDto = _mapper.Map<TicketDto>(ticket);
-            ticketDto.UserEmail = user?.UserEmail;
+            //ticketDto.UserEmail = user?.UserEmail;
             ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
             
             if (ticket.Status != updatedTicketDto.Status)
