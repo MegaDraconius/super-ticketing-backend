@@ -5,7 +5,10 @@ using super_ticketing_backend.Models;
 using super_ticketing_backend.Repositories;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+
 using super_ticketing_backend.Services.MailingService;
+using super_ticketing_backend.Services.PhotoService;
+
 
 namespace super_ticketing_backend.Controllers
 {
@@ -18,14 +21,24 @@ namespace super_ticketing_backend.Controllers
         private readonly IITGuyRepository _itGuyRepository;
         private readonly IMailingSystem _mailingSystem;
         private readonly IMapper _mapper;
+        private readonly IPhotoService _photoService;
 
-        public TicketController(ITicketRepository ticketRepository, IUserRepository userRepository, IITGuyRepository itGuyRepository, IMailingSystem mailingSystem, IMapper mapper)
+
+        public TicketController(
+            ITicketRepository ticketRepository,
+            IUserRepository userRepository,
+            IITGuyRepository itGuyRepository,
+            IMapper mapper,
+            IMailingSystem mailingSystem,
+            IPhotoService photoService)
+
         {
             _ticketRepository = ticketRepository;
             _userRepository = userRepository;
             _itGuyRepository = itGuyRepository;
             _mailingSystem = mailingSystem;
             _mapper = mapper;
+            _photoService = photoService;
         }
 
         [HttpGet]
@@ -70,8 +83,9 @@ namespace super_ticketing_backend.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(TicketCreateDto ticketCreateDto)
+        public async Task<IActionResult> Post(TicketCreateDto ticketCreateDto, IFormFile photo)
         {
+
             try
             {
                 var newTicket = _mapper.Map<Tickets>(ticketCreateDto);
@@ -85,6 +99,7 @@ namespace super_ticketing_backend.Controllers
                 var userEmail = ticketDto.UserEmail;
                 var about = ticketDto.Title;
                 var trackingId = ticketDto.TrackingId;
+
 
                 await _mailingSystem.SendCreationMail(userEmail, about, trackingId);
                 // await _ticketRepository.SendMail(userEmail, about);
