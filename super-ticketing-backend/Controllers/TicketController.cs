@@ -118,7 +118,7 @@ namespace super_ticketing_backend.Controllers
                 ticket.ITGuyId = itGuy.Id;
             }
 
-            
+            var oldStatus = ticket.Status;
 
             _mapper.Map(updatedTicketDto, ticket);
             await _ticketRepository.UpdateAsync(ticket);
@@ -127,10 +127,10 @@ namespace super_ticketing_backend.Controllers
             ticketDto.UserEmail = user?.UserEmail;
             ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
             
-            if (ticket.Status != updatedTicketDto.Status)
+            if (oldStatus != updatedTicketDto.Status)
             {
                 await _mailingSystem.SendStatusUpdateMail(ticketDto.UserEmail, "Cambio estado de incidencia",
-                    updatedTicketDto.Status);
+                    updatedTicketDto.Status, updatedTicketDto.Title);
             }
 
             return NoContent();
