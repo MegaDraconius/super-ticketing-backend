@@ -11,13 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/MongoDbServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/MongoDbServiceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/ItGuyRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/ItGuyRepositoryTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/TicketRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/TicketRepositoryTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/UserRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/UserRepositoryTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +46,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.super-ticketing-backend: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "refactor/email",
+    "git-widget-placeholder": "dev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
