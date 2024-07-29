@@ -14,8 +14,14 @@
       <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Services/PhotoService/PhileUploadOperation.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Services/PhotoService/PhotoService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/MongoDbServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/MongoDbServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/ItGuyRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/ItGuyRepositoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/TicketRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/TicketRepositoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RepositoryTests/UserRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RepositoryTests/UserRepositoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +32,11 @@
     <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -37,6 +48,7 @@
     <setting file="file://$PROJECT_DIR$/super-ticketing-backend/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/super-ticketing-backend/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -53,6 +65,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.super-ticketing-backend: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+
     "git-widget-placeholder": "feature/add-foto-from-backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -62,10 +75,13 @@
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
+    ],
     "rider.external.source.directories": [
-      "C:\\Users\\miche\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\miche\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\miche\\AppData\\Local\\Symbols\\src"
+      "/home/lpcbcn044/.config/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
+      "/home/lpcbcn044/.config/JetBrains/Rider2024.1/resharper-host/SourcesCache",
+      "/home/lpcbcn044/.local/share/Symbols/src"
     ]
   }
 }]]></component>
@@ -136,13 +152,16 @@
       <workItem from="1721717914285" duration="9415000" />
       <workItem from="1721813117703" duration="6868000" />
       <workItem from="1721822408628" duration="9072000" />
-      <workItem from="1721909770591" duration="3694000" />
+      <workItem from="1721903351386" duration="2595000" />
+      <workItem from="1721979613744" duration="4774000" />
+      <workItem from="1721987764355" duration="6281000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
