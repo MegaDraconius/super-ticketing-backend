@@ -41,6 +41,8 @@ namespace super_ticketing_backend.Controllers
 
                 ticketDto.UserEmail = user?.UserEmail;
                 ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
+                
+                Console.WriteLine(ticketDto.UserEmail);
             }
 
             return ticketDtos;
