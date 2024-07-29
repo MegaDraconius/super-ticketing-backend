@@ -40,6 +40,11 @@ builder.Services.AddSingleton<ICountryRepository, CountryRepository>(provider =>
     var countryCollection = provider.GetRequiredService<IMongoCollection<Country>>();
     return new CountryRepository(countryCollection);
 });
+builder.Services.AddSingleton<ITicketStatusRepository, TicketStatusRepository>(provider =>
+{
+    var ticketStatusCollection = provider.GetRequiredService<IMongoCollection<TicketStatus>>();
+    return new TicketStatusRepository(ticketStatusCollection);
+});
 
 builder.Services.AddScoped<IMailingSystem, MailingSystem>();
 
