@@ -9,5 +9,8 @@ public interface ITicketRepository
     Task CreateAsync(Tickets newTicket);
     Task UpdateAsync(Tickets updatedTicket);
     Task RemoveAsync(string id);
-    Task SendMail(string to, string about);
+    // Task SendMail(string to, string about);
+
+    Task UpdateStatus(string id, string statusValue);
+    // Task<List<Tickets>> GetLastTicket();
 }
