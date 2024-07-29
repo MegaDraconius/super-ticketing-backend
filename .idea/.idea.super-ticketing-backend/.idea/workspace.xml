@@ -10,8 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/TicketStatus.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +25,25 @@
     <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/statusValues" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;alexmrtc&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MegaDraconius/super-ticketing-backend.git&quot;,
+    &quot;accountId&quot;: &quot;cf9b841b-c808-48a4-a0a4-a0854868c132&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/573461dc897731c11d6166574b77a8c3aabba220/src/libraries/Microsoft.Extensions.DependencyInjection.Abstractions/src/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/649f9a5315084d038b64e29ea11b1fb5b920/01/96ae4b9c/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
@@ -31,6 +51,7 @@
     <setting file="file://$PROJECT_DIR$/super-ticketing-backend/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/super-ticketing-backend/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -56,10 +77,13 @@
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
+    ],
     "rider.external.source.directories": [
-      "C:\\Users\\miche\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\miche\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\miche\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\Usuario\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Usuario\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Usuario\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -130,20 +154,39 @@
       <workItem from="1721717914285" duration="9415000" />
       <workItem from="1721813117703" duration="6868000" />
       <workItem from="1721822408628" duration="9072000" />
-      <workItem from="1721909770591" duration="3694000" />
+      <workItem from="1721903351386" duration="2595000" />
+      <workItem from="1721979613744" duration="4774000" />
+      <workItem from="1721987764355" duration="6281000" />
+      <workItem from="1722104509740" duration="80000" />
+      <workItem from="1722104621249" duration="45000" />
+      <workItem from="1722233015922" duration="48000" />
+      <workItem from="1722272655498" duration="966000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
