@@ -24,6 +24,7 @@ namespace super_ticketing_backend.Services
             services.AddSingleton(mongoDatabase.GetCollection<ITGuys>(mongoDbSettings.ITGuysCollectionName));
             services.AddSingleton(mongoDatabase.GetCollection<Country>(mongoDbSettings.CountryCollectionName));
             services.AddSingleton(mongoDatabase.GetCollection<Tickets>(mongoDbSettings.TicketsCollectionName));
+            services.AddSingleton(mongoDatabase.GetCollection<TicketStatus>(mongoDbSettings.TicketStatusCollectionName));
 
             return services;
         }
