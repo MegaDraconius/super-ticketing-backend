@@ -9,21 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/LoginDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/LoginRequestDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Dto's/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/UserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Models/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/Users.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Repositories/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Services/MailingService/IMailingSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Services/MailingService/IMailingSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Services/MailingService/MailingSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Services/MailingService/MailingSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Utilities/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Utilities/AutoMapperProfile.cs" afterDir="false" />
-    </list>
+    <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,7 +141,7 @@
       <workItem from="1721987764355" duration="6281000" />
       <workItem from="1722235553486" duration="625000" />
       <workItem from="1722248963610" duration="5757000" />
-      <workItem from="1722271406795" duration="1586000" />
+      <workItem from="1722271406795" duration="2780000" />
     </task>
     <servers />
   </component>
