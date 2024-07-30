@@ -10,4 +10,5 @@ public class TicketUpdateDto
     //public DateTime SolvedDate { get; set; }
     //public string UserEmail { get; set; }
     public string ItGuyEmail { get; set; }
+    public bool Stored { get; set; }
 }

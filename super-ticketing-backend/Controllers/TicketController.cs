@@ -159,7 +159,7 @@ namespace super_ticketing_backend.Controllers
             return Ok();
         }
 
-        [HttpPatch("{id:length(24)}")]
+        [HttpPatch("{id:length(24)}/status")]
         public async Task<ActionResult> ChangeStatus(string id, string statusValue)
         {
             var ticket = await _ticketRepository.GetAsync(id);
@@ -173,6 +173,22 @@ namespace super_ticketing_backend.Controllers
 
             return Ok();
         }
+        
+        [HttpPatch("{id:length(24)}/stored")]
+        public async Task<ActionResult> ChangeStored(string id, bool storedValue)
+        {
+            var ticket = await _ticketRepository.GetAsync(id);
+            
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+        
+            await _ticketRepository.UpdateStored(id, storedValue);
+        
+            return Ok();
+        }
+
 
         [HttpDelete("{id:length(24)}")]
         public async Task<IActionResult> Delete(string id)

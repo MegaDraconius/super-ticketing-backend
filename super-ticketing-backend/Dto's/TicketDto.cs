@@ -18,4 +18,5 @@ public class TicketDto
     public string ItGuyEmail { get; set; }
     
     public string Feedback { get; set; }
+    public bool Stored { get; set; }
 }

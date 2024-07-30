@@ -12,5 +12,9 @@ public interface ITicketRepository
     // Task SendMail(string to, string about);
 
     Task UpdateStatus(string id, string statusValue);
+    
+    Task UpdateStored(string id, bool storedValue);
+
+
     // Task<List<Tickets>> GetLastTicket();
 }
