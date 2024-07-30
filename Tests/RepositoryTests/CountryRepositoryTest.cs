@@ -32,21 +32,22 @@ public class CountryRepositoryTest : IDisposable
     }
 
     [Fact]
-    public async Task GetAsync_ReturnAllContry()
+    public async Task GetAsync_ReturnAllCountry()
     {
         var countries = await _countryRepository.GetAsync();
         
         Assert.NotEmpty(countries);
     }
-
+    
     [Fact]
-    public async Task GetAsync_NotNull_ReturnCountry()
+    public async Task GetAsync_WithValidId_ReturnCountry()
     {
         var country = await _countryCollection.Find(_ => true).FirstOrDefaultAsync();
 
         var result = await _countryRepository.GetAsync(country.Id);
 
         Assert.NotNull(result);
+        Assert.Equal(country.Id, result.Id);
     }
 
     [Fact]
@@ -61,7 +62,6 @@ public class CountryRepositoryTest : IDisposable
         };
 
         await _countryRepository.CreateAsync(newCountry);
-
         var countries = await _countryRepository.GetAsync();
 
         Assert.Contains(countries, u => u.Id == newCountry.Id);
