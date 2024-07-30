@@ -10,6 +10,7 @@
     &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.TicketRepositoryTest&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.CountryRepositoryTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
+  &lt;Project Location="C:\Users\Usuario\RiderProjects\super-ticketing-backend\Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
 	</wpf:ResourceDictionary>
