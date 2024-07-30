@@ -54,14 +54,12 @@ namespace super_ticketing_backend.Controllers
 
                 ticketDto.UserEmail = user?.UserEmail;
                 ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
-                
-                Console.WriteLine(ticketDto.UserEmail);
             }
 
             return ticketDtos;
         }
 
-        [HttpGet("{id:length(24)}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<TicketDto>> Get(string id)
         {
             var ticket = await _ticketRepository.GetAsync(id);
@@ -113,7 +111,7 @@ namespace super_ticketing_backend.Controllers
             }
         }
         
-        [HttpPut("{id:length(24)}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, TicketUpdateDto updatedTicketDto)
         {
             var ticket = await _ticketRepository.GetAsync(id);
@@ -122,12 +120,13 @@ namespace super_ticketing_backend.Controllers
             {
                 return NotFound();
             }
+            Console.WriteLine(ticket.Id);
 
-            var user = await _userRepository.GetByEmailAsync(updatedTicketDto.UserEmail);
-            if (user != null)
-            {
-                ticket.UserId = user.Id;
-            }
+            //var user = await _userRepository.GetByEmailAsync(updatedTicketDto.UserEmail);
+            //if (user != null)
+            //{
+            //    ticket.UserId = user.Id;
+            //}
 
             var itGuy = await _itGuyRepository.GetByEmailAsync(updatedTicketDto.ItGuyEmail);
             if (itGuy != null)
@@ -135,22 +134,28 @@ namespace super_ticketing_backend.Controllers
                 ticket.ITGuyId = itGuy.Id;
             }
 
-            
+            if (updatedTicketDto.Status == "Resuelto")
+            {
+                var currentDate = DateTime.Now;
+                ticket.SolvedDate = currentDate;
+                Console.WriteLine(currentDate);
+            }
 
             _mapper.Map(updatedTicketDto, ticket);
             await _ticketRepository.UpdateAsync(ticket);
 
             var ticketDto = _mapper.Map<TicketDto>(ticket);
-            ticketDto.UserEmail = user?.UserEmail;
+            //ticketDto.UserEmail = user?.UserEmail;
             ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
             
             if (ticket.Status != updatedTicketDto.Status)
             {
                 await _mailingSystem.SendStatusUpdateMail(ticketDto.UserEmail, "Cambio estado de incidencia",
                     updatedTicketDto.Status);
+                Console.WriteLine("mail enviado");
             }
 
-            return NoContent();
+            return Ok();
         }
 
         [HttpPatch("{id:length(24)}")]

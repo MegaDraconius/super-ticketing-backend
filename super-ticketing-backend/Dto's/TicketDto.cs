@@ -16,4 +16,6 @@ public class TicketDto
     public string UserEmail { get; set; }
     public string ItGuyId { get; set; }
     public string ItGuyEmail { get; set; }
+    
+    public string Feedback { get; set; }
 }

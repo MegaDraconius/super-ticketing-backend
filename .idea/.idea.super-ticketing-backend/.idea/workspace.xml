@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="" />
+    <list default="true" id="a6ac6dea-3146-4244-81d2-bb0640a53e27" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.super-ticketing-backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketUpdateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Dto's/TicketUpdateDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/super-ticketing-backend/Models/Tickets.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,9 +64,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.super-ticketing-backend: http.executor": "Run",
+    ".NET Launch Settings Profile.super-ticketing-backend: http.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "Merging dev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,9 +79,9 @@
       "mongo"
     ],
     "rider.external.source.directories": [
-      "C:\\Users\\Usuario\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Usuario\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Usuario\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\miche\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\miche\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\miche\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -149,7 +155,9 @@
       <workItem from="1721903351386" duration="2595000" />
       <workItem from="1721979613744" duration="4774000" />
       <workItem from="1721987764355" duration="6281000" />
-      <workItem from="1722287114886" duration="915000" />
+      <workItem from="1722287114886" duration="2011000" />
+      <workItem from="1722289162192" duration="1409000" />
+      <workItem from="1722321336902" duration="5209000" />
     </task>
     <servers />
   </component>
@@ -171,5 +179,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/super-ticketing-backend/Controllers/TicketController.cs</url>
+          <line>150</line>
+          <properties documentPath="C:\Users\miche\Documents\FactoriaF5\fullStack-bootcamp\Ticketing\super-ticketing-backend\super-ticketing-backend\Controllers\TicketController.cs" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="4989" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5034" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

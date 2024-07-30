@@ -55,4 +55,8 @@ public class Tickets
     [BsonElement("ITEmployees")]
     [JsonPropertyName("ITEmployees")]
     public string ITGuyId { get; set; }
+    
+    [BsonElement("Feedback")]
+    [JsonPropertyName("Feedback")]
+    public string Feedback { get; set; }
 }
