@@ -14,6 +14,8 @@ public interface ITicketRepository
     Task UpdateStatus(string id, string statusValue);
     
     Task UpdateStored(string id, bool storedValue);
+    Task UpdateTrackingId(string id, string newTracking);
+    
 
 
     // Task<List<Tickets>> GetLastTicket();

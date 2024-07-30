@@ -9,4 +9,5 @@ public interface ITicketStatusRepository
     Task CreateAsync(TicketStatus newTicketStatus);
 
     Task UpdateAsync(TicketStatus updatedTicketStatus);
+    
 }

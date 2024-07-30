@@ -19,23 +19,18 @@ namespace super_ticketing_backend.Controllers
         private readonly ITicketRepository _ticketRepository;
         private readonly IUserRepository _userRepository;
         private readonly IITGuyRepository _itGuyRepository;
+        private readonly ICountryRepository _countryRepository;
         private readonly IMailingSystem _mailingSystem;
         private readonly IMapper _mapper;
         private readonly IPhotoService _photoService;
 
 
-        public TicketController(
-            ITicketRepository ticketRepository,
-            IUserRepository userRepository,
-            IITGuyRepository itGuyRepository,
-            IMapper mapper,
-            IMailingSystem mailingSystem,
-            IPhotoService photoService)
-
+        public TicketController(ITicketRepository ticketRepository, IUserRepository userRepository, IITGuyRepository itGuyRepository, ICountryRepository countryRepository, IMailingSystem mailingSystem, IMapper mapper, IPhotoService photoService)
         {
             _ticketRepository = ticketRepository;
             _userRepository = userRepository;
             _itGuyRepository = itGuyRepository;
+            _countryRepository = countryRepository;
             _mailingSystem = mailingSystem;
             _mapper = mapper;
             _photoService = photoService;
@@ -83,7 +78,6 @@ namespace super_ticketing_backend.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(TicketCreateDto ticketCreateDto)
         {
-
             try
             {
                 var newTicket = _mapper.Map<Tickets>(ticketCreateDto);
@@ -93,16 +87,26 @@ namespace super_ticketing_backend.Controllers
                 
                 var user = await _userRepository.GetAsync(ticketDto.UserId);
                 ticketDto.UserEmail = user?.UserEmail;
+
+                var countryId = user.CountryId;
+                var countryData = await _countryRepository.GetAsync(countryId);
+                var countryCode = countryData.CountryCode;
+
+                var splitId = ticketDto.Id.Substring(0, 8);
+
+                var trackingId = $"{countryCode}-{splitId}";
+
+                //ticketDto.TrackingId = trackingId;
                 
                 var userEmail = ticketDto.UserEmail;
                 var about = ticketDto.Title;
-                var trackingId = ticketDto.TrackingId;
+                //var trackingId = ticketDto.TrackingId;
 
-
+                await _ticketRepository.UpdateTrackingId(ticketDto.Id, trackingId);
                 await _mailingSystem.SendCreationMail(userEmail, about, trackingId);
                 // await _ticketRepository.SendMail(userEmail, about);
                 
-                return CreatedAtAction(nameof(Get), new { id = ticketDto.Id }, ticketDto);
+                return CreatedAtAction(nameof(Get), new { id = ticketDto.Id,  }, ticketDto);
             }
             catch (Exception e)
             {

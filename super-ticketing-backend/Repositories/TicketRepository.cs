@@ -46,6 +46,13 @@ public class TicketRepository : ITicketRepository
         await _ticketsCollection.UpdateOneAsync(filter, updatedValue);
     }
     
+    public async Task UpdateTrackingId(string id, string newTracking)
+    {
+        var filter = Builders<Tickets>.Filter.Eq(ticket => ticket.Id, id);
+        var updatedValue = Builders<Tickets>.Update.Set(ticket => ticket.TrackingId, newTracking);
+        await _ticketsCollection.UpdateOneAsync(filter, updatedValue);
+    }
+    
     // public async Task<List<Tickets>> GetLastTicket() => 
     //     await _ticketsCollection.Find(x => x.TrackingId.Contains("ES%")).ToListAsync();
 }
