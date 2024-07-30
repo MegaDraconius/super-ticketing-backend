@@ -1,16 +1,13 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CUsuario_005CRiderProjects_005Csuper_002Dticketing_002Dbackend_005Csuper_002Dticketing_002Dbackend_005CServices_005CMongoAtlasService_002Ecs/@EntryIndexedValue">True</s:Boolean>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=43987ec2_002D09c5_002D4c80_002D9045_002Dec28e36884bb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="MongoDbConnectionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.MongoDbConnectionTest&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::SuperTicketingBackend.Tests.UserRepositoryTests&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.UserRepositoryTests&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.ItGuyRepositoryTest&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.TicketRepositoryTest.GetAsync_ReturnAllTickets&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.TicketRepositoryTest&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.CountryRepositoryTest&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-  &lt;Project Location="C:\Users\Usuario\RiderProjects\super-ticketing-backend\Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d758d755_002Ddb96_002D4d6b_002Dbaf1_002D9d4806443634/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TicketStatusRepositoryTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.TicketStatusRepositoryTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.CountryRepositoryTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.UserRepositoryTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.ItGuyRepositoryTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
 	</wpf:ResourceDictionary>

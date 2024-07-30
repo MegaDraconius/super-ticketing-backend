@@ -16,11 +16,9 @@ namespace Tests
         private readonly IMongoCollection<Users> _usersCollection;
         private readonly UserRepository _userRepository;
         private readonly IMongoDatabase _database;
-        private readonly ITestOutputHelper _output;
 
         public UserRepositoryTests(ITestOutputHelper output)
         {
-            _output = output;
             
             // Iniciar Mongo2Go
             _runner = MongoDbRunner.Start();
@@ -40,7 +38,6 @@ namespace Tests
                 AccessToken = Guid.NewGuid().ToString("N")
             };
             _usersCollection.InsertOne(user);
-            _output.WriteLine(user.ToJson());
         }
 
         [Fact]

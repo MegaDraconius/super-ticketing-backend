@@ -81,7 +81,7 @@ namespace super_ticketing_backend.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(TicketCreateDto ticketCreateDto, IFormFile photo)
+        public async Task<IActionResult> Post(TicketCreateDto ticketCreateDto)
         {
 
             try
