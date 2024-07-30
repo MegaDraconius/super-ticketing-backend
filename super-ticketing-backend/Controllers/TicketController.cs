@@ -120,13 +120,8 @@ namespace super_ticketing_backend.Controllers
             {
                 return NotFound();
             }
-            Console.WriteLine(ticket.Id);
 
-            //var user = await _userRepository.GetByEmailAsync(updatedTicketDto.UserEmail);
-            //if (user != null)
-            //{
-            //    ticket.UserId = user.Id;
-            //}
+            Console.WriteLine(ticket.Id);
 
             var itGuy = await _itGuyRepository.GetByEmailAsync(updatedTicketDto.ItGuyEmail);
             if (itGuy != null)
@@ -146,6 +141,12 @@ namespace super_ticketing_backend.Controllers
             await _ticketRepository.UpdateAsync(ticket);
 
             var ticketDto = _mapper.Map<TicketDto>(ticket);
+            
+            var user = await _userRepository.GetByIdAsync(ticket.UserId);
+            if (user != null)
+            {
+                ticketDto.UserEmail = user.UserEmail;
+            }
             //ticketDto.UserEmail = user?.UserEmail;
             ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
             

@@ -21,6 +21,9 @@ public class UserRepository : IUserRepository
 
     public async Task<Users?> GetByEmailAsync(string email) =>
         await _usersCollection.Find(x => x.UserEmail == email).FirstOrDefaultAsync();
+    
+    public async Task<Users?> GetByIdAsync(string id) =>
+        await _usersCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
     public async Task CreateAsync(Users newUser) =>
         await _usersCollection.InsertOneAsync(newUser);
 
