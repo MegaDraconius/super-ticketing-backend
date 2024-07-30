@@ -108,6 +108,21 @@ public class UserController : ControllerBase
 
         return NoContent();
     }
+    
+    [HttpPatch("{id}")]
+    public async Task<ActionResult> ChangeToken(string id, string newToken)
+    {
+        var ticket = await _userRepository.GetAsync(id);
+
+        if (ticket == null)
+        {
+            return NotFound();
+        }
+
+        await _userRepository.UpdateAccessToken(id, newToken);
+
+        return Ok();
+    }
 
     [HttpDelete("{id:length(24)}")]
     public async Task<IActionResult> Delete(string id)

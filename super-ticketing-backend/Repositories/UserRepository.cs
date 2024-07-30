@@ -32,6 +32,13 @@ public class UserRepository : IUserRepository
 
     public async Task RemoveAsync(string id) =>
         await _usersCollection.DeleteOneAsync(x => x.Id == id);
+    
+    public async Task UpdateAccessToken(string id, string newToken)
+    {
+        var filter = Builders<Users>.Filter.Eq(user => user.Id, id);
+        var updatedValue = Builders<Users>.Update.Set(user => user.AccessToken, newToken);
+        await _usersCollection.UpdateOneAsync(filter, updatedValue);
+    }
 
     public async Task<Users?> Login(LoginRequestDto loginRequestDto) =>
         await _usersCollection.Find(x => x.UserEmail == loginRequestDto.UserEmail && x.Pwd == loginRequestDto.Pwd).FirstOrDefaultAsync();
