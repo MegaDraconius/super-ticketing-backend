@@ -26,4 +26,8 @@ public class Users
     [BsonElement("Role")]
     [JsonPropertyName("Role")]
     public string Role { get; set; }
+    
+    [BsonElement("accessToken")]
+    [JsonPropertyName("accessToken")]
+    public string AccessToken { get; set; }
 }

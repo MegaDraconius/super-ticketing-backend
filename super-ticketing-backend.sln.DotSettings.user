@@ -1,25 +1,16 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CUsuario_005CRiderProjects_005Csuper_002Dticketing_002Dbackend_005Csuper_002Dticketing_002Dbackend_005CServices_005CMongoAtlasService_002Ecs/@EntryIndexedValue">True</s:Boolean>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=43987ec2_002D09c5_002D4c80_002D9045_002Dec28e36884bb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="MongoDbConnectionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.MongoDbConnectionTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.CountryRepositoryTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.ItGuyRepositoryTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.TicketRepositoryTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.ControllerTests.CountryControllerTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::super_ticketing_backend.Tests.ItGuyControllerTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.UserRepositoryTests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d6fe898d_002Db48f_002D4f2c_002Db171_002D70cdd8a6a804/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CountryRepositoryTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.CountryRepositoryTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f5534cfc_002Db228_002D4542_002D84f8_002Dcf3a5ee8c5bc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CountryRepositoryTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.CountryRepositoryTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=43987ec2_002D09c5_002D4c80_002D9045_002Dec28e36884bb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="MongoDbConnectionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.MongoDbConnectionTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::SuperTicketingBackend.Tests.UserRepositoryTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.UserRepositoryTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.ItGuyRepositoryTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.TicketRepositoryTest.GetAsync_ReturnAllTickets&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.TicketRepositoryTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::4AE90DD2-A30B-4BB1-9334-894FA5E4E4AD::net8.0::Tests.CountryRepositoryTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+  &lt;Project Location="C:\Users\Usuario\RiderProjects\super-ticketing-backend\Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
 	</wpf:ResourceDictionary>
