@@ -71,12 +71,13 @@ public class CountryRepositoryTest : IDisposable
     public async Task UpdateAsync_UpdateExistingCountry()
     {
         var country = await _countryCollection.Find(_ => true).FirstOrDefaultAsync();
-        country.CountryName = "Poland";
+        country.CountryCode = "PORT";
 
         await _countryRepository.UpdateAsync(country);
         var updatedCountry = await _countryRepository.GetAsync(country.Id);
-        
-        Assert.Equal("Poland", updatedCountry.CountryName);
+
+        Assert.NotNull(updatedCountry);
+        Assert.Equal("PORT", updatedCountry.CountryCode);
     }
 
     [Fact]
