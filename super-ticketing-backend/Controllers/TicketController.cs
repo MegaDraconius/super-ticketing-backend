@@ -153,7 +153,7 @@ namespace super_ticketing_backend.Controllers
             if (oldStatus != updatedTicketDto.Status)
             {
                 await _mailingSystem.SendStatusUpdateMail(ticketDto.UserEmail, "Cambio estado de incidencia",
-                    updatedTicketDto.Status, updatedTicketDto.Title);
+                    updatedTicketDto.Status, ticketDto.Title);
             }
 
             return NoContent();
