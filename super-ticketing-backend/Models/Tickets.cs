@@ -59,4 +59,8 @@ public class Tickets
     [BsonElement("Feedback")]
     [JsonPropertyName("Feedback")]
     public string Feedback { get; set; }
+    
+    [BsonElement("Stored")]
+    [JsonPropertyName("Stored")]
+    public bool Stored { get; set; }
 }
