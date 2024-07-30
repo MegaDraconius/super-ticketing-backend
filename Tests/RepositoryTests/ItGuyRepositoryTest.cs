@@ -29,7 +29,7 @@ public class ItGuyRepositoryTest: IDisposable
             Surname = "Esteve",
             Pwd = "Hello1!",
             Role = "Administrator",
-            CountryId = "Spain",
+            CountryId = ObjectId.GenerateNewId().ToString(),
             ItGuyEmail = "rogeresteve@gmail.com"
         };
         _itGuyCollection.InsertOne(itGuy);
@@ -73,8 +73,8 @@ public class ItGuyRepositoryTest: IDisposable
                 Surname = "Jorja",
                 Pwd = "Hello1!",
                 Role = "Administrator",
-                CountryId = "Spain",
-                ItGuyEmail = "sarajorja@gmail.com"
+                CountryId = ObjectId.GenerateNewId().ToString(),
+                ItGuyEmail = "sara@jorja.com"
             };
 
             await _itGuyRepository.CreateAsync(newiTGuy);
@@ -82,6 +82,17 @@ public class ItGuyRepositoryTest: IDisposable
             var itGuys = await _itGuyRepository.GetAsync();
 
             Assert.Contains(itGuys, u => u.Id == newiTGuy.Id);
+        }
+
+        [Fact]
+        public async Task GetByEmailAsync_WithValidEmail_ReturnItGuy()
+        {
+            var itGuy = await _itGuyCollection.Find(_ => true).FirstOrDefaultAsync();
+
+            var result = await _itGuyRepository.GetByEmailAsync(itGuy.ItGuyEmail);
+            
+            Assert.NotNull(result);
+            Assert.Equal(itGuy.ItGuyEmail, result.ItGuyEmail);
         }
 
         [Fact]
@@ -112,29 +123,4 @@ public class ItGuyRepositoryTest: IDisposable
             _runner.Dispose();
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
