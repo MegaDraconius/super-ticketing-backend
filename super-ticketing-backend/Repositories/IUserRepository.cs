@@ -9,5 +9,6 @@ public interface IUserRepository
     Task UpdateAsync(Users updatedUser);
     Task RemoveAsync(string id);
     Task<Users?> GetByIdAsync(string id);
+    Task UpdateAccessToken(string id, string newToken);
     Task<Users?> Login(LoginRequestDto loginRequestDto);
 }
