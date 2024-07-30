@@ -25,12 +25,12 @@ public class ItGuyRepositoryTest: IDisposable
         var itGuy = new ITGuys
         {
             Id = ObjectId.GenerateNewId().ToString(),
-            Name = "Roger",
+            ItGuyName = "Roger",
             Surname = "Esteve",
             Pwd = "Hello1!",
             Role = "Administrator",
-            Country = "Spain",
-            Email = "rogeresteve@gmail.com"
+            CountryId = ObjectId.GenerateNewId().ToString(),
+            ItGuyEmail = "rogeresteve@gmail.com"
         };
         _itGuyCollection.InsertOne(itGuy);
         }
@@ -69,12 +69,12 @@ public class ItGuyRepositoryTest: IDisposable
             var newiTGuy = new ITGuys
             {
                 Id = ObjectId.GenerateNewId().ToString(),
-                Name = "Sara",
+                ItGuyName = "Sara",
                 Surname = "Jorja",
                 Pwd = "Hello1!",
                 Role = "Administrator",
-                Country = "Spain",
-                Email = "sarajorja@gmail.com"
+                CountryId = ObjectId.GenerateNewId().ToString(),
+                ItGuyEmail = "sara@jorja.com"
             };
 
             await _itGuyRepository.CreateAsync(newiTGuy);
@@ -85,15 +85,26 @@ public class ItGuyRepositoryTest: IDisposable
         }
 
         [Fact]
+        public async Task GetByEmailAsync_WithValidEmail_ReturnItGuy()
+        {
+            var itGuy = await _itGuyCollection.Find(_ => true).FirstOrDefaultAsync();
+
+            var result = await _itGuyRepository.GetByEmailAsync(itGuy.ItGuyEmail);
+            
+            Assert.NotNull(result);
+            Assert.Equal(itGuy.ItGuyEmail, result.ItGuyEmail);
+        }
+
+        [Fact]
         public async Task UpdateAsync_UpdateExsitingUser()
         {
             var itGuy = await _itGuyCollection.Find(_ => true).FirstOrDefaultAsync();
-            itGuy.Name = "Alejandro";
+            itGuy.ItGuyName = "Alejandro";
 
             await _itGuyRepository.UpdateAsync(itGuy);
             var updatedItGuy = await _itGuyRepository.GetAsync(itGuy.Id);
             
-            Assert.Equal("Alejandro", updatedItGuy.Name);
+            Assert.Equal("Alejandro", updatedItGuy.ItGuyName);
         }
 
         [Fact]
@@ -112,29 +123,4 @@ public class ItGuyRepositoryTest: IDisposable
             _runner.Dispose();
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

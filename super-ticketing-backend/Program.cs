@@ -6,6 +6,9 @@ using super_ticketing_backend.Services;
 using super_ticketing_backend.Utilities;
 using System.Net.Mail;
 using System.Net;
+using super_ticketing_backend.Services.MailingService;
+using super_ticketing_backend.Services.PhotoService;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +40,14 @@ builder.Services.AddSingleton<ICountryRepository, CountryRepository>(provider =>
     var countryCollection = provider.GetRequiredService<IMongoCollection<Country>>();
     return new CountryRepository(countryCollection);
 });
+builder.Services.AddSingleton<ITicketStatusRepository, TicketStatusRepository>(provider =>
+{
+    var ticketStatusCollection = provider.GetRequiredService<IMongoCollection<TicketStatus>>();
+    return new TicketStatusRepository(ticketStatusCollection);
+});
+
+builder.Services.AddScoped<IMailingSystem, MailingSystem>();
+
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.Configure<DataBaseSettings>(
     builder.Configuration.GetSection("super-ticketing-backend"));
@@ -51,6 +62,7 @@ builder.Services.AddCors(options =>
     });
 });
 builder.Services.AddMongoDb(builder.Configuration);
+builder.Services.AddScoped<IPhotoService, PhotoService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

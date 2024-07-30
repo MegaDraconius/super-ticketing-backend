@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-
 namespace super_ticketing_backend.Models;
 
 public class Tickets
@@ -56,4 +55,12 @@ public class Tickets
     [BsonElement("ITEmployees")]
     [JsonPropertyName("ITEmployees")]
     public string ITGuyId { get; set; }
+    
+    [BsonElement("Feedback")]
+    [JsonPropertyName("Feedback")]
+    public string Feedback { get; set; }
+    
+    [BsonElement("Stored")]
+    [JsonPropertyName("Stored")]
+    public bool Stored { get; set; }
 }

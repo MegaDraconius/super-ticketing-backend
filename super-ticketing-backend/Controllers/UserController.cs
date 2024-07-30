@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System.Security.Cryptography;
+using AutoMapper;
+using Microsoft.AspNetCore.Authentication.BearerToken;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using super_ticketing_backend.Dto_s;
@@ -105,6 +107,21 @@ public class UserController : ControllerBase
         await _userRepository.UpdateAsync(user);
 
         return NoContent();
+    }
+    
+    [HttpPatch("{id}")]
+    public async Task<ActionResult> ChangeToken(string id, string newToken)
+    {
+        var ticket = await _userRepository.GetAsync(id);
+
+        if (ticket == null)
+        {
+            return NotFound();
+        }
+
+        await _userRepository.UpdateAccessToken(id, newToken);
+
+        return Ok();
     }
 
     [HttpDelete("{id:length(24)}")]
