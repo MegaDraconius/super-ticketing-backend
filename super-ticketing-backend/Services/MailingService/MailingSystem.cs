@@ -49,12 +49,12 @@ public class MailingSystem : IMailingSystem
         }
     }
     
-    public async Task SendStatusUpdateMail(string to, string about, string newStatus)
+    public async Task SendStatusUpdateMail(string to, string about, string newStatus, string newTitle)
     {
         try
         {
-            string body = $@"<h2>El estado de tu incidencia: '{about}' ha sido modificado!</h2></br>
-                            <p>Tu incicendia ahora se encuentra: '{newStatus}'</p>";
+            string body = $@"<h2>El estado de tu incidencia: '{newTitle}' ha sido modificado!</h2></br>
+                            <p>Tu incicendia ahora se encuentra en: '{newStatus}'</p>";
 
             MailMessage mail = GenerateMailMessage(body, to, about);
             SmtpClient client = GenerateSmtpClient("smtp.gmail.com", 587); //Aquí debes sustituir tu servidor SMTP y el puerto

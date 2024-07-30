@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using super_ticketing_backend.Dto_s;
 using super_ticketing_backend.Models;
 
 namespace super_ticketing_backend.Repositories;
@@ -28,4 +29,7 @@ public class UserRepository : IUserRepository
 
     public async Task RemoveAsync(string id) =>
         await _usersCollection.DeleteOneAsync(x => x.Id == id);
+
+    public async Task<Users?> Login(LoginRequestDto loginRequestDto) =>
+        await _usersCollection.Find(x => x.UserEmail == loginRequestDto.UserEmail && x.Pwd == loginRequestDto.Pwd).FirstOrDefaultAsync();
 }
