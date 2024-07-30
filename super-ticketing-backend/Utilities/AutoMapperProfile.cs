@@ -29,10 +29,11 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.CountryCode, opt => opt.Ignore());
         CreateMap<UserCreateDto, Users>()
             .ForMember(dest => dest.CountryId, opt => opt.Ignore());
+        CreateMap<Users, LoginDto>();
+        CreateMap<LoginRequestDto, Users>();
 
         CreateMap<TicketStatus, TicketStatusDto>();
         CreateMap<TicketStatusCreateDto, TicketStatus>();
-
     }
     
 }

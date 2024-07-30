@@ -135,11 +135,12 @@ namespace super_ticketing_backend.Controllers
                 ticket.ITGuyId = itGuy.Id;
             }
 
+            var oldStatus = ticket.Status;
+            
             if (updatedTicketDto.Status == "Resuelto")
             {
                 var currentDate = DateTime.Now;
                 ticket.SolvedDate = currentDate;
-                Console.WriteLine(currentDate);
             }
 
             _mapper.Map(updatedTicketDto, ticket);
@@ -149,10 +150,10 @@ namespace super_ticketing_backend.Controllers
             //ticketDto.UserEmail = user?.UserEmail;
             ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
             
-            if (ticket.Status != updatedTicketDto.Status)
+            if (oldStatus != updatedTicketDto.Status)
             {
                 await _mailingSystem.SendStatusUpdateMail(ticketDto.UserEmail, "Cambio estado de incidencia",
-                    updatedTicketDto.Status);
+                    updatedTicketDto.Status, updatedTicketDto.Title);
             }
 
             return NoContent();
