@@ -121,8 +121,6 @@ namespace super_ticketing_backend.Controllers
                 return NotFound();
             }
 
-            Console.WriteLine(ticket.Id);
-
             var itGuy = await _itGuyRepository.GetByEmailAsync(updatedTicketDto.ItGuyEmail);
             if (itGuy != null)
             {
@@ -150,9 +148,9 @@ namespace super_ticketing_backend.Controllers
             //ticketDto.UserEmail = user?.UserEmail;
             ticketDto.ItGuyEmail = itGuy?.ItGuyEmail;
             
-            if (oldStatus != updatedTicketDto.Status)
+            if (updatedTicketDto.Status == "Resuelto")
             {
-                await _mailingSystem.SendStatusUpdateMail(ticketDto.UserEmail, "Cambio estado de incidencia",
+                await _mailingSystem.SendStatusUpdateMail(ticketDto.UserEmail, "Incidencia resuelta",
                     updatedTicketDto.Status, ticketDto.Title, ticketDto.Feedback);
             }
 
