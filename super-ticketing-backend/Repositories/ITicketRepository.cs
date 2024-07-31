@@ -9,14 +9,8 @@ public interface ITicketRepository
     Task CreateAsync(Tickets newTicket);
     Task UpdateAsync(Tickets updatedTicket);
     Task RemoveAsync(string id);
-    // Task SendMail(string to, string about);
-
     Task UpdateStatus(string id, string statusValue);
     
     Task UpdateStored(string id, bool storedValue);
     Task UpdateTrackingId(string id, string newTracking);
-    
-
-
-    // Task<List<Tickets>> GetLastTicket();
 }

@@ -60,6 +60,13 @@ builder.Services.AddCors(options =>
             .AllowCredentials()
             .AllowAnyHeader();
     });
+    options.AddPolicy("AllowDeploy", policyBuilder =>
+    {
+        policyBuilder.WithOrigins("https://luracare-ticketing.netlify.app/") //URL del front
+            .AllowAnyMethod()
+            .AllowCredentials()
+            .AllowAnyHeader();
+    });
 });
 builder.Services.AddMongoDb(builder.Configuration);
 builder.Services.AddScoped<IPhotoService, PhotoService>();
@@ -77,6 +84,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseCors("Allowlocalhost4200");
+app.UseCors("AllowDeploy");
 
 app.MapControllers();
 
